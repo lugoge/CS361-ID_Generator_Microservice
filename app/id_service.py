@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
 import json
 import random
+import os
 
 app = Flask(__name__)
 
-FILE_NAME = "ids.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_NAME = os.path.join(BASE_DIR, "ids.json")
 
 # Helper: load IDS
 def load_ids():
